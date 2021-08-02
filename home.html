@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+        }
+        .video{
+            position: relative;
+            margin: 0 auto;
+            max-width: 800px;
+            width: 100%;
+
+            background-color: gray;
+        }
+
+        .video > div{
+            width: 100%;
+            padding-bottom: 56.25%;
+        }
+
+        
+        .video > div iframe{
+            position: absolute;
+            z-index: 1;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 구글맵 */
+        .map{
+            position: relative;
+            margin: 0 auto;
+            max-width: 800px; /*컨텐츠 최대 가로값*/
+            width: 100%;
+
+            background-color: gray;
+        }
+
+        .map > div{
+            width: 100%;
+            padding-bottom: 56.25%; /*이 비율은 부모 기준*/
+        }
+
+        
+        .map > div iframe{
+            position: absolute;
+            z-index: 1;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 카카오맵 */
+        .kakaomap{
+            position: relative;
+            margin: 0 auto;
+            max-width: 800px;
+            width: 100%;
+
+            background-color: gray;
+        }
+
+        .kakaomap > .root_daum_roughmap{
+            width: 100%;
+            padding-bottom: 56.25%;
+        }
+
+        
+        .kakaomap > .root_daum_roughmap .wrap_map{
+            position: absolute;
+            z-index: 1;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .kakaomap .hide{  안보이게~
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- 유튜브 -->
+    <div class="video">
+        <div>
+            <iframe src="https://www.youtube.com/embed/6N9Ob2R81UA" title="YouTube video player" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- 구글맵 -->
+
+    <div class="map"> 
+        <div> 
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.711387396966!2d126.94463985091367!3d37.56186303205419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c988459902d69%3A0xf2536b3850f9d80d!2z7J207ZmU7Jes7J6Q64yA7ZWZ6rWQ!5e0!3m2!1sko!2skr!4v1627906920344!5m2!1sko!2skr" 
+            style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+
+
+
+    <!-- * 카카오맵 - 지도퍼가기 -->
+<!-- 1. 지도 노드 -->
+    <div class="kakaomap">
+    <div id="daumRoughmapContainer1627907082946" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+    </div>
+<!--
+	2. 설치 스크립트
+	* 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+-->
+<script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+<!-- 3. 실행 스크립트 -->
+<script charset="UTF-8">
+	new daum.roughmap.Lander({
+		"timestamp" : "1627907082946",
+		"key" : "26u6a",
+		// "mapWidth" : "640",
+		// "mapHeight" : "360"
+	}).render();
+</script>
+ 
+    
+
+</body>
+</html>
